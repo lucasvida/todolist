@@ -1,0 +1,110 @@
+/* RESET CSS*/
+
+body{
+    font-family: var(--primary-font);
+    box-sizing: border-box;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    list-style: none;
+    outline: none;
+}
+
+ul{
+    list-style: none;
+}
+
+/* ROOT */
+
+:root{
+    --backgrond-color: #FFF;
+    --primary-color: #0ea5e9;
+    --secundary-color:#f0f9ff;
+    --btn-primary-color:#0369a1;
+    --border-color:#7dd3fc;
+    --primary-font: 'Roboto', sans-serif;
+    --secundary-font: 'Helvetica' sans-serif;
+}
+
+
+@layer base{
+
+    header{
+        width: 100%;
+        background-color: var(--secundary-color);
+    }
+
+    button{
+        cursor: pointer;
+    }
+
+    .container{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+}
+
+@layer desktop{
+
+    .menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        height: 65px;
+        padding: 10spx;
+    }
+
+    .btn-config{
+        border: 1px solid var(--border-color);
+        background-color: var(--secundary-color);
+        color: #082f49;
+        padding: 10px;
+        font-weight: bold;
+        font-size: 1.5em;
+        border-radius: 5px;
+    }
+
+    .btn-config:hover{
+        background-color: #082f49;
+        color: #ffffff;
+        transition: 1s;
+    }
+
+    .task-list{
+        width: 500px;
+        min-height: 500px;
+        border-radius: 15px;
+        background-color: var(--secundary-color);
+        margin: 25px auto;
+    }
+
+    .input{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+
+    input[type="text"]{
+        padding: 10px;
+        border-radius: 15px;
+        border: var(--border-color) solid 1px;
+        width:65%;
+    }
+
+    button[type="submit"]{
+        background-color: var(--btn-primary-color);
+        color: var(--secundary-color);
+        width: 125px;
+        padding: 10px;
+        border: none;
+        border-radius: 25px;
+        font-weight: bolder;
+    }
+
+}
