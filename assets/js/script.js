@@ -56,3 +56,20 @@ function checkItem() {
     });
   }
 }
+
+
+/* Menu Off-Canvas */
+
+const config = document.querySelector(".btn-config");
+const menuOfCanvas = document.querySelector(".menu-offcanvas");
+
+config.addEventListener("click", ()=>{
+    menuOfCanvas.style.marginRight = 0;
+})
+
+
+const close = document.querySelector(".close");
+
+close.addEventListener("click", ()=>{
+  menuOfCanvas.style.marginRight = "-500px";
+})

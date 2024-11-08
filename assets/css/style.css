@@ -27,6 +27,7 @@ ul{
     --border-color:#7dd3fc;
     --primary-font: 'Roboto', sans-serif;
     --secundary-font: 'Helvetica' sans-serif;
+    --color-mode: dark;
 }
 
 
@@ -90,6 +91,33 @@ ul{
         padding: 10px;
     }
 
+    .menu-offcanvas{
+        width: 350px;
+        height: 100vh;
+        background-color: var(--btn-primary-color);
+        color: var(--backgrond-color);
+        position: fixed;
+        top:0;
+        right: 0;
+        margin-right: -500px;
+        padding: 20px;
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
+        -webkit-box-shadow: -5px -12px 55px -29px rgba(0,0,0,1);
+        -moz-box-shadow: -5px -12px 55px -29px rgba(0,0,0,1);
+        box-shadow: -5px -12px 55px -29px rgba(0,0,0,1);
+    }
+
+    .close{
+        font-size: 1.2em;
+        font-weight: bold;
+        display: flex;
+        justify-content: flex-end;
+        cursor: pointer;
+    }
+
     input[type="text"]{
         padding: 10px;
         border-radius: 15px;
@@ -107,4 +135,24 @@ ul{
         font-weight: bolder;
     }
 
+}
+
+/* Base (light mode) styles */
+
+@media screen and (prefers-color-scheme: dark ) {
+
+    :root{
+        --backgrond-color: black;
+        --primary-color: #0ea5e9;
+        --secundary-color:#f0f9ff;
+        --btn-primary-color:#0369a1;
+        --border-color:#7dd3fc;
+        --primary-font: 'Roboto', sans-serif;
+        --secundary-font: 'Helvetica' sans-serif;
+        --color-mode: dark;
+    }
+
+    body{
+        background-color: var(--backgrond-color);
+    }
 }
