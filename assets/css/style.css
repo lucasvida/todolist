@@ -118,6 +118,11 @@ ul{
         cursor: pointer;
     }
 
+    .done {
+        text-decoration: line-through;
+        color: red;
+      }
+
     input[type="text"]{
         padding: 10px;
         border-radius: 15px;
