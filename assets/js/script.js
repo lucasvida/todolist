@@ -42,13 +42,25 @@ function criaLista() {
     //Converte itens.date em data.
     itens.date = new Date(itens.date);
     const li = document.createElement("li");
+    li.classList.add('card-line');
     li.innerHTML = `
-      <input type="checkbox" data-id="${index}" id="check-${index}" ${itens.done ? 'checked' : ''}>
-      <label for="check-${index}" class="${itens.done ? 'done' : 'none'}">
-  ${itens.task} | ${itens.date.toLocaleDateString('pt-BR',options)}
-</label>
-      <p>${itens.description}</p>
-      <a href="#" id="${index}"><i class="bi bi-trash3-fill"></i></a>
+      <div>
+        <input type="checkbox" data-id="${index}" id="check-${index}" ${itens.done ? 'checked' : ''}>
+        <label for="check-${index}" class="${itens.done ? 'done' : 'none'}">
+          <span class="task-title">${itens.task} </span> <hr>
+        </label>
+        
+      </div>
+      <div>
+        <span class="task-date">${itens.date.toLocaleDateString('pt-BR',options)}</span>
+      <p class="task-description">${itens.description}</p> 
+      </div>
+      <div  class="task-remove">
+        <a href="#" id="${index}">
+      <i class="bi bi-trash3-fill"> Remover Tarefa</i></a>
+      </div>
+      
+      
     `;
     tarefas.append(li);
   });
@@ -57,6 +69,7 @@ function criaLista() {
   checkBox = document.querySelectorAll("input[type='checkbox']");
   removeItem();
   checkItem();
+  sort();
 }
 
 function removeItem() {
@@ -91,6 +104,19 @@ function checkItem() {
   }
 }
 
+function sort(){
+
+  const itensList = document.getElementById(
+    'itens-list'
+  );
+  
+  new Sortable(itensList, {
+    animation: 250,
+    ghostClass: 'task-drag'
+});
+ 
+}
+
 /* Menu Off-Canvas */
 const config = document.querySelector(".btn-config");
 const menuOfCanvas = document.querySelector(".menu-offcanvas");
@@ -104,3 +130,4 @@ const close = document.querySelector(".close");
 close.addEventListener("click", () => {
   menuOfCanvas.style.marginRight = "-500px";
 });
+
